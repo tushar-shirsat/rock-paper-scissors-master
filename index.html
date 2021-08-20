@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <h3>rock</h3>
+        <h3>paper</h3>
+        <h3>scissors</h3>
+      </div>
+      <div class="score">
+        <p>score</p>
+        <h3 id="my-score">00</h3>
+      </div>
+    </div>
+
+    <div class="game show">
+      <div class="card paper" id="paper">
+        <div class="img"></div>
+      </div>
+      <div class="card scissor" id="scissor">
+        <div class="img"></div>
+      </div>
+      <div class="card rock" id="rock">
+        <div class="img"></div>
+      </div>
+    </div>
+
+    <div class="game-start">
+      <div class="your-game">
+        <h3>You picked</h3>
+        <div class="your-game-result">
+          <!-- <div class="your-paper">
+            <div class="img"></div>
+          </div> -->
+        </div>
+      </div>
+      <div class="result">
+        <h3 class="result-title">your lose</h3>
+        <button class="btn">play again</button>
+      </div>
+      <div class="computer-game">
+        <h3>the house picked</h3>
+        <div class="your-game-result computer-game-result">
+          <div class="start"></div>
+          <!-- <div class="your-paper win">
+            <div class="img"></div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="rulesBtn" id="rulesBtn">rules</a>
+  </div>
+  <div class="background-rules"></div>
+  <div class="rules">
+    <div class="rules-top">
+      <h3 class="title">rules</h3>
+      <i class="fas fa-times close"></i>
+    </div>
+    <div class="game-rules">
+      
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

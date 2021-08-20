@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fnt-fmly: 'Barlow Semi Condensed', sans-serif;
+    --drk-txt: hsl(229, 25%, 31%);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    overflow: hidden;
+}
+.container{
+    padding-top: 5rem;
+    min-height: 100vh;
+    background: radial-gradient(farthest-corner , hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
+    font-family: var(--fnt-fmly);
+    z-index: 1;
+}
+.header{
+    width: 50vw;
+    margin: auto;
+    color: #fff;
+    border: 2px solid lightgray;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.title h3{
+    font-size: 2rem;
+    font-size: bold;
+    text-transform: uppercase;
+}
+
+.score{
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 1rem 2rem -0.6rem rgba(0,0,0,0.3);
+    padding: 1rem 3rem;  
+    border-radius: 0.5rem;
+}
+
+.score p{
+    font-size: 1.4rem;
+    color: hsl(229, 64%, 46%);
+    text-align: center;
+}
+
+.score h3{
+    font-size: 4rem;
+    color: var(--drk-txt);
+    text-align: center;
+}
+
+.game{
+    width: 20rem;
+    height: 20rem;
+    border: 2rem solid transparent;
+    margin: auto;
+    margin-top: 15rem;
+    position: relative;
+    display: none;
+    background-image: url('./images//bg-triangle.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.paper,.scissor,.rock{
+    width: 15rem;
+    height: 15rem;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem -0.6rem rgba(0,0,0,0.3);
+    display: grid;
+    place-items: center;
+}
+.paper{
+    left: -60%;
+    top: -60%;
+    background: radial-gradient(farthest-corner,hsl(230, 89%, 62%) , hsl(230, 89%, 65%));
+}
+.paper .img{
+    width: 70%;
+    height: 70%;
+    background-image: url('./images/icon-paper.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px #000003;
+}
+.scissor{
+    right: -60%;
+    top: -60%;
+    background: radial-gradient(farthest-corner,hsl(39, 89%, 49%) , hsl(40, 84%, 53%));
+}
+.scissor .img{
+    width: 70%;
+    height: 70%;
+    background-image: url('./images/icon-scissors.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px #000003;
+}
+
+.rock{
+    bottom: -60%;
+    background: radial-gradient(farthest-corner,hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.rock .img{
+    width: 70%;
+    height: 70%;
+    background-image: url('./images/icon-rock.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px #000003;
+}
+
+.rulesBtn{
+    text-align: right;
+    padding: 0.5rem 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-size: 1.6em;
+}
+
+.background-rules{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+}
+
+.rules{
+    z-index: 3;
+    background-color: #fff;
+    width: 30rem;
+    height: 30rem;
+    padding: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 1rem 2rem -0.6rem rgba(0,0,0,0.3);
+    border-radius: 0.5rem;
+    display: none;
+}
+
+.rules-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.rules-top .title{
+    font-size: 2rem;
+    color: var(--drk-txt);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.rules-top .fas{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.game-rules{
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+    background: url('./images/image-rules.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.show{
+    display: block !important;
+}
+.game-start{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    gap: 3rem;
+    display: none;
+}
+.your-game,.computer-game{
+    width: 20rem;
+    height: 20rem;
+}
+
+.your-game h3,.computer-game h3{
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.your-game-result{
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+    position: relative;
+}
+.your-paper,.your-rock,.your-scissor,.start{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem -0.6rem rgba(0,0,0,0.3);
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.start{
+    background-color: var(--drk-txt);
+}
+
+.your-paper{
+    background: radial-gradient(farthest-corner,hsl(230, 89%, 62%) , hsl(230, 89%, 65%));
+}
+
+.your-scissor{
+    background: radial-gradient(farthest-corner,hsl(39, 89%, 49%) , hsl(40, 84%, 53%));
+}
+
+.your-rock{
+    background: radial-gradient(farthest-corner,hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.your-paper .img,.your-rock .img,.your-scissor .img{
+    width: 70%;
+    height: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px #000003;
+}
+
+.your-paper .img{
+    background-image: url('./images/icon-paper.svg');
+}
+
+.your-rock .img{
+    background-image: url('./images//icon-rock.svg');
+}
+
+.your-scissor .img{
+    background-image: url('./images/icon-scissors.svg');
+}
+
+
+
+.result{
+    margin: 0 10rem;
+    display: none;
+}
+
+.result > .result-title{
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.result .btn{
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    color: var(--drk-txt);
+    text-transform: uppercase;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.game-start-show{
+    display: flex !important;
+    /* flex-wrap: wrap; */
+}
+
+@media only screen and (max-width: 600px){
+    .header{
+        width: 80vw;
+    }
+    .game{
+        width: 15rem;
+        height: 15rem;
+        margin-top: 10rem;
+    }
+    .paper,.scissor,.rock{
+        width: 10rem;
+        height: 10rem;
+    }
+    .rulesBtn{
+        right: 50%;
+        transform: translateX(50%);
+    }
+    .your-game h3,.computer-game h3{
+        font-size: 1.2rem;
+    }
+    .paper .img,.rock .img,.scissor .img,.your-paper .img,.your-rock .img,.your-scissor .img{
+        width: 80%;
+        height: 80%;
+    }
+    .game-start{
+        position: relative;
+    }
+    .your-game,.computer-game{
+        width: 13rem;
+        height: 18rem;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .result{
+        position: absolute;
+        bottom: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 !important;
+        /* width: 100%; */
+    }
+    .result > .result-title{
+        text-align: center;
+        font-size: 1.6rem;
+    }
+    .result .btn{
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px){
+    .game-start{
+        position: relative;
+    }
+    .result{
+        position: absolute;
+        bottom: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 !important;
+        /* width: 100%; */
+    }
+}
